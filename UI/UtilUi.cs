@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace chlg3
+namespace MainBusinessApp
 {
     internal class UtilUi
     {
