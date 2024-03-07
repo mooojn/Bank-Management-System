@@ -1,3 +1,7 @@
 
 *.vsidx
 .gitattributes
+.vs/MainBusinessApp/v17/.suo
+/.vs/MainBusinessApp/v17
+/.vs/MainBusinessApp
+.vs/MainBusinessApp/v17/.suo
