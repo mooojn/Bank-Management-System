@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MainBusinessApp
-
 {
     internal class UserUi
     {
