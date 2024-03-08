@@ -41,6 +41,7 @@ namespace MainBusinessApp
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write("Processing please wait...");
+            Console.WriteLine();
             Console.ResetColor();
             Thread.Sleep(800);
         }
@@ -56,6 +57,35 @@ namespace MainBusinessApp
         {
             Console.Write("Enter your choice: ");
             return Console.ReadLine();
+        }
+        public static string GetMaskedInput()
+        {
+            Console.Write("Enter Password: ");
+            string pass = "";
+            ConsoleKeyInfo key;
+
+            do
+            {
+                key = Console.ReadKey(true);
+
+                if (key.Key != ConsoleKey.Backspace && key.Key != ConsoleKey.Enter)
+                {
+                    pass += key.KeyChar;
+                    Console.Write("*");
+                }
+                else
+                {
+                    if (key.Key == ConsoleKey.Backspace && pass.Length > 0)
+                    {
+                        pass = pass.Substring(0, (pass.Length - 1));
+                        Console.Write("\b \b");
+                    }
+                }
+            }
+            // Stops Receving Keys Once Enter is Pressed
+            while (key.Key != ConsoleKey.Enter);
+            Console.WriteLine();
+            return pass;
         }
     }
 }
