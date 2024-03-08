@@ -33,14 +33,14 @@ namespace MainBusinessApp
         public static void InvalidChoice()
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Invalid Choice...");
+            Console.Write("Invalid Choice...");
             Console.ResetColor();
             Thread.Sleep(500);
         }
         public static void Process()
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("Processing please wait...");
+            Console.Write("Processing please wait...");
             Console.ResetColor();
             Thread.Sleep(800);
         }
@@ -51,6 +51,11 @@ namespace MainBusinessApp
                 Success("Successfull...");
             else
                 Error("Invalid amount");
+        }
+        public static string GetChoice()
+        {
+            Console.Write("Enter your choice: ");
+            return Console.ReadLine();
         }
     }
 }
