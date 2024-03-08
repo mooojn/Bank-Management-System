@@ -8,11 +8,14 @@ namespace MainBusinessApp
 {
     internal class MainUi
     {
-        public static string Menu()
+        public static void Header()
         {
             Console.Clear();
-            // welcome message
-            Console.WriteLine("......Welcome to the Bank......\n");
+            Console.WriteLine("......Azure Bank......\n");
+        }
+        public static string Menu()
+        {
+            Header();
             // menu
             Console.WriteLine("1. Sign-in as an Administrator");
             Console.WriteLine("2. Sign-in as a User");
@@ -25,7 +28,7 @@ namespace MainBusinessApp
         }
         public static string UserMenu()
         {
-            Console.Clear();
+            Header();
             // menu
             Console.WriteLine("1. Check Portfolio");
             Console.WriteLine("2. Deposit Cash");
@@ -40,7 +43,7 @@ namespace MainBusinessApp
         }
         public static string AdminMenu()
         {
-            Console.Clear();
+            Header();
             // menu
             Console.WriteLine("1. Add New User");
             Console.WriteLine("2. View Users");
