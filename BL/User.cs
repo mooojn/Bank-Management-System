@@ -13,11 +13,12 @@ namespace MainBusinessApp
         private string name;
         private string password;
         private int cash;
+        private List<History> history;
         // constructor for initializing
-        public User(string userName, string userPass)
+        public User(string name, string pass)
         {
-            name = userName;
-            password = userPass;
+            this.name = name;
+            password = pass;
             cash = 0;  // default val
         }
         public bool AddCash(int depositAmount)
