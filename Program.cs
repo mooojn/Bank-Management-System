@@ -10,7 +10,8 @@ namespace MainBusinessApp
 {
     internal class Program
     {
-        public static SqlConnection connection = new SqlConnection("Data Source=DESKTOP-AJHCE58\\MOOOJN;Initial Catalog=Azure-Bank;Integrated Security=True");
+        public static string con = "Data Source=DESKTOP-AJHCE58\\MOOOJN;Initial Catalog=Azure-Bank;Integrated Security=True";
+        public static SqlConnection connection = new SqlConnection(con);
         static void Main(string[] args)
         {
             // choices

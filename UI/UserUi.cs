@@ -13,7 +13,7 @@ namespace MainBusinessApp
             Console.Write("Enter Name: ");
             return Console.ReadLine();
         }
-        public static string GetPass()
+        public static string GetPassword()
         {
             Console.Write("Enter Password: ");
             return Console.ReadLine();

@@ -13,5 +13,10 @@ namespace MainBusinessApp
             Console.Write("Enter the index of User: ");
             return int.Parse(Console.ReadLine());
         }
+        public static string GetPassword()
+        {
+            Console.Write("Enter Password: ");
+            return Console.ReadLine();
+        }
     }
 }
