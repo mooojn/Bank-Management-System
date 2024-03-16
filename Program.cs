@@ -14,12 +14,25 @@ namespace MainBusinessApp
         public static SqlConnection connection = new SqlConnection(con);
         static void Main(string[] args)
         {
-            // choices
+            // main choices
             const string ADMIN_LOGIN = "1";
             const string USER_SIGN_IN = "2";
             const string USER_SIGN_UP = "3";
             const string EXIT = "4";
-            
+            // user choices
+            const string CHECK_PORTFOLIO = "1";
+            const string DEPOSIT_CASH = "2";
+            const string WITHDRAW_CASH = "3";
+            const string BLOCK_TRANSACTIONS = "4";
+            const string DELETE_ACCOUNT = "5";
+            const string USER_LOGOUT = "6";
+            // admin choices
+            const string ADD_USER = "1";
+            const string VIEW_USERS = "2";
+            const string CHANGE_USER_NAME = "3";
+            const string DELETE_USER = "4";
+            const string ADMIN_LOGOUT = "5";
+
             // START
         logout:  // used to logout from admin or user
             string choice = "";
@@ -86,23 +99,23 @@ namespace MainBusinessApp
             while (true) {
                 choice = MainUi.AdminMenu();
                 switch (choice) {
-                    case "1":
+                    case ADD_USER:
                         Console.WriteLine("Add New User");
                         Console.ReadKey();
                         break;
-                    case "2":
+                    case VIEW_USERS:
                         Console.WriteLine("View Users");
                         Console.ReadKey();
                         break;
-                    case "3":
+                    case CHANGE_USER_NAME:
                         Console.WriteLine("Change User Name");
                         Console.ReadKey();
                         break;
-                    case "4":
+                    case DELETE_USER:
                         Console.WriteLine("Delete User");
                         Console.ReadKey();
                         break;
-                    case "5":
+                    case ADMIN_LOGOUT:
                         goto logout;
                     default:
                         UtilUi.InvalidChoice();
@@ -110,32 +123,30 @@ namespace MainBusinessApp
                 }
             }
         userLogin:
-            while (true)
-            {
+            while (true) {
                 choice = MainUi.UserMenu();
-                switch (choice)
-                {
-                    case "1":
+                switch (choice) {
+                    case CHECK_PORTFOLIO:
                         Console.WriteLine("Check Portfolio");
                         Console.ReadKey();
                         break;
-                    case "2":
+                    case DEPOSIT_CASH:
                         Console.WriteLine("Deposit Cash");
                         Console.ReadKey();
                         break;
-                    case "3":
+                    case WITHDRAW_CASH:
                         Console.WriteLine("Withdraw Cash");
                         Console.ReadKey();
                         break;
-                    case "4":
+                    case BLOCK_TRANSACTIONS:
                         Console.WriteLine("Block Transactions");
                         Console.ReadKey();
                         break;
-                    case "5":
+                    case DELETE_ACCOUNT:
                         Console.WriteLine("Delete Account");
                         Console.ReadKey();
                         break;
-                    case "6":
+                    case USER_LOGOUT:
                         goto logout;
                     default:
                         UtilUi.InvalidChoice();
