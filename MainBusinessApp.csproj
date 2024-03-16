@@ -49,6 +49,7 @@
     <Compile Include="BL\User.cs" />
     <Compile Include="DL\AdminDL.cs" />
     <Compile Include="DL\UserDL.cs" />
+    <Compile Include="DL\UserFunc.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI\AdminUi.cs" />
