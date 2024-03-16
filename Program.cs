@@ -89,8 +89,10 @@ namespace MainBusinessApp
                         else
                             UtilUi.Error("User already exists.");
                         break;
+
                     case EXIT:
-                        return; // end program
+                        return;   // end program
+
                     default:
                         UtilUi.InvalidChoice();
                         break;
@@ -104,20 +106,25 @@ namespace MainBusinessApp
                         Console.WriteLine("Add New User");
                         Console.ReadKey();
                         break;
+
                     case VIEW_USERS:
                         Console.WriteLine("View Users");
                         Console.ReadKey();
                         break;
+
                     case CHANGE_USER_NAME:
                         Console.WriteLine("Change User Name");
                         Console.ReadKey();
                         break;
+
                     case DELETE_USER:
                         Console.WriteLine("Delete User");
                         Console.ReadKey();
                         break;
+
                     case ADMIN_LOGOUT:
                         goto logout;
+
                     default:
                         UtilUi.InvalidChoice();
                         break;
@@ -130,20 +137,26 @@ namespace MainBusinessApp
                     case CHECK_PORTFOLIO:
                         UserFunc.CheckPortfolio();
                         break;
+
                     case DEPOSIT_CASH:
                         UserFunc.DepositCash();
                         break;
+
                     case WITHDRAW_CASH:
                         UserFunc.WithdrawCash();
                         break;
+
                     case BLOCK_TRANSACTIONS:
                         Console.WriteLine("Block Transactions");
                         break;
+
                     case DELETE_ACCOUNT:
                         UserFunc.DeleteAccount();
                         goto logout;   // after deleting account, user is logged out
+
                     case USER_LOGOUT:
                         goto logout;
+
                     default:
                         UtilUi.InvalidChoice();
                         break;

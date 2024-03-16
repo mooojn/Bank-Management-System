@@ -20,6 +20,7 @@ namespace MainBusinessApp
             this.name = name;
             password = pass;
             cash = 0;  // default val
+            history = new List<History>();
         }
         public bool AddCash(int depositAmount)
         {

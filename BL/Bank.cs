@@ -11,6 +11,7 @@ namespace MainBusinessApp
         private string name;
         private string password;
         private List<User> users;
+        
         private List<Asset> assets;
         public Bank(string name, string pass)
         {
