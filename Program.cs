@@ -10,6 +10,7 @@ namespace MainBusinessApp
 {
     internal class Program
     {
+        public static int currentUserId = -1;   // -1 means no user is logged in
         public static string con = "Data Source=DESKTOP-AJHCE58\\MOOOJN;Initial Catalog=Azure-Bank;Integrated Security=True";
         public static SqlConnection connection = new SqlConnection(con);
         static void Main(string[] args)
@@ -127,15 +128,14 @@ namespace MainBusinessApp
                 choice = MainUi.UserMenu();
                 switch (choice) {
                     case CHECK_PORTFOLIO:
-                        Console.WriteLine("Check Portfolio");
-                        Console.ReadKey();
+                        UserFunc.CheckPortfolio();
                         break;
                     case DEPOSIT_CASH:
-                        Console.WriteLine("Deposit Cash");
+                        UserFunc.DepositCash();
                         Console.ReadKey();
                         break;
                     case WITHDRAW_CASH:
-                        Console.WriteLine("Withdraw Cash");
+                        UserFunc.WithdrawCash();
                         Console.ReadKey();
                         break;
                     case BLOCK_TRANSACTIONS:
