@@ -57,7 +57,20 @@ namespace MainBusinessApp
             cmd.ExecuteNonQuery();
 
             Program.connection.Close();
-            UtilUi.Success("Cash has been deposited");
+            UtilUi.Success("Cash has been Withdrawn");
+        }
+        public static void DeleteAccount()
+        {
+            Program.connection.Open();
+
+            string query = "DELETE FROM Users WHERE userId = @uid";
+
+            SqlCommand cmd = new SqlCommand(query, Program.connection);
+            cmd.Parameters.AddWithValue("@uid", Program.currentUserId);
+            
+            cmd.ExecuteNonQuery();
+
+            Program.connection.Close();
         }
     }
 }
