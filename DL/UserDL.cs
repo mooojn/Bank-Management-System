@@ -15,14 +15,6 @@ namespace MainBusinessApp
     {
         public static List<User> Users = new List<User>();
 
-        //public static bool SignIn(string name, string pass)
-        //{
-        //    // validating
-        //    if (PassValidated(name, pass)) {
-        //        return true;
-        //    }
-        //    return false;
-        //}
         public static void SignUp(string name, string pass)
         {   
             UtilUi.Process();
@@ -38,17 +30,6 @@ namespace MainBusinessApp
             Program.connection.Close();
             UtilUi.Success("You have successfully signed up");
         }
-        public static void ViewAllUsers()
-        {
-            int i = 0;
-
-            Console.WriteLine("Index\tName\tCash");
-            foreach(User Usr in Users)
-            {
-                //Console.WriteLine($"{i}\t{Usr.name}\t{Usr.cash}");
-                i++;
-            }
-        }
         public static bool PassValidated(string name, string pass)
         {
             bool flag = false;
@@ -59,12 +40,13 @@ namespace MainBusinessApp
             SqlCommand cmd = new SqlCommand(query, Program.connection);
             cmd.Parameters.AddWithValue("@name", name);
             cmd.Parameters.AddWithValue("@pass", pass);
-            
+                
             SqlDataReader reader = cmd.ExecuteReader();
-
-            if (reader.Read())
+            
+            if (reader.Read()) {
                 flag = true;
-
+                Program.currentUserId = Convert.ToInt32(reader["userId"]);  // setting current user id
+            }
             Program.connection.Close();
             
             return flag;
