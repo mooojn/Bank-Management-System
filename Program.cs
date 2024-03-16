@@ -132,20 +132,16 @@ namespace MainBusinessApp
                         break;
                     case DEPOSIT_CASH:
                         UserFunc.DepositCash();
-                        Console.ReadKey();
                         break;
                     case WITHDRAW_CASH:
                         UserFunc.WithdrawCash();
-                        Console.ReadKey();
                         break;
                     case BLOCK_TRANSACTIONS:
                         Console.WriteLine("Block Transactions");
-                        Console.ReadKey();
                         break;
                     case DELETE_ACCOUNT:
-                        Console.WriteLine("Delete Account");
-                        Console.ReadKey();
-                        break;
+                        UserFunc.DeleteAccount();
+                        goto logout;   // after deleting account, user is logged out
                     case USER_LOGOUT:
                         goto logout;
                     default:
